@@ -38,7 +38,7 @@
   </div>
   <div class="navbar-menu">
     <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
-      <a class="navbar-item" href="https://keunhong.com">
+      <a class="navbar-item" href="https://jjuun0.github.io/jjuun_resume/">
       <span class="icon">
           <i class="fas fa-home"></i>
       </span>
@@ -54,9 +54,9 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">TransMixing: Generative Stylization Using Non-linear Style Mixing via Layer-wise Transformers</h1>
-          <h3 class="title is-1 publication-title">계층별 트랜스포머를 활용한 비선형 스타일 결합 기반 생성적 스타일 변환 기법</h3>
-          <div class="is-size-5 publication-authors">
+          <h1 class="title is-3 publication-title">TransMixing: Generative Stylization Using Non-linear Style Mixing via Layer-wise Transformers</h1>
+          <h3 class="title is-3 publication-title">계층별 트랜스포머를 활용한 비선형 스타일 결합 기반 생성적 스타일 변환 기법</h3>
+          <div class="is-size-4 publication-authors">
             <span class="author-block">
               <a href="https://jjuun0.github.io/jjuun_resume/">Junhyoung Lee</a><sup>1</sup>,</span>
             <span class="author-block">
@@ -75,7 +75,7 @@
             <div class="publication-links">
               <!-- PDF Link. -->
               <span class="link-block">
-                <a href="https://arxiv.org/pdf/2011.12948"
+                <a href="https://www.kci.go.kr/kciportal/ci/sereArticleSearch/ciSereArtiView.kci?sereArticleSearchBean.artiId=ART002960159"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fas fa-file-pdf"></i>
@@ -104,15 +104,6 @@
 
 <section class="section">
   <div class="container is-max-desktop">
-    <!-- Paper video. -->
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">TransMixing</h2>
-        <div class="publication-video">
-			<img src="images/transmixing.png" />
-        </div>
-      </div>
-    </div>
 
     <!-- Abstract. -->
     <div class="columns is-centered has-text-centered">
@@ -136,14 +127,12 @@
 
 <section class="section">
   <div class="container is-max-desktop">
-
+    <!-- Architecture. -->
     <div class="columns is-centered">
-
-      <!-- Architecture. -->
       <div class="column">
         <div class="content">
           <h2 class="title is-3">Architecture</h2>
-          <img src="images/architecture.png" />
+          <img src="./static/images/architecture.png" />
           <p>
             잠재벡터의 계층(coarse, medium, fine)을 별도로 독립적인 신경망을 두어 스타일 벡터를 인코딩한다.
           </p>
@@ -154,23 +143,8 @@
           </ul>
         </div>
       </div>
-      <!--/ Architecture. -->
-
-      <!-- Matting. -->
-      <div class="column">
-        <h2 class="title is-3">Matting</h2>
-        <div class="columns is-centered">
-          <div class="column content">
-            <p>
-              As a byproduct of our method, we can also solve the matting problem by ignoring
-              samples that fall outside of a bounding box during rendering.
-            </p>
-          </div>
-
-        </div>
-      </div>
     </div>
-    <!--/ Matting. -->
+    <!--/ Architecture. -->
 
     <!-- Animation. -->
     <div class="columns is-centered">
