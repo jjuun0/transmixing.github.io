@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="TransMixing: Generative Stylization Using Non-linear Style Mixing via Layer-wise Transformers">
+  <meta name="keywords" content="Transformer, Style mixing, Stylization">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TransMixing: Generative Stylization Using Non-linear Style Mixing via Layer-wise Transformers</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div class="navbar-menu">
+    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+      <a class="navbar-item" href="https://keunhong.com">
+      <span class="icon">
+          <i class="fas fa-home"></i>
+      </span>
+      </a>
+    </div>
+
+  </div>
+</nav>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">TransMixing: Generative Stylization Using Non-linear Style Mixing via Layer-wise Transformers</h1>
+          <h3 class="title is-1 publication-title">계층별 트랜스포머를 활용한 비선형 스타일 결합 기반 생성적 스타일 변환 기법</h3>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://jjuun0.github.io/jjuun_resume/">Junhyoung Lee</a><sup>1</sup>,</span>
+            <span class="author-block">
+              Junwoo Kim<sup>1</sup>,</span>
+            <span class="author-block">
+              Heeseok Oh<sup>1</sup>,
+            </span>
+            <span class="author-block">
+              Jun Ji<sup>1</sup>,
+            </span>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>University of Hansung</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="https://arxiv.org/pdf/2011.12948"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/jjuun0/Capstone_Design"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Paper video. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">TransMixing</h2>
+        <div class="publication-video">
+			<img src="images/transmixing.png" />
+        </div>
+      </div>
+    </div>
+
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Stylization은 주어진 이미지를 원하는 특정 스타일로 변환하는 기술이다. 초기의 연구에서는 그래디언트를이용한 연구가 진행되었으나, 최근에는 고품질의 얼굴 이미지 생성이 가능한 생성 모델의 발전으로, 생성망을 활용한 stylization 기술이 발전되어왔다. 이 중 JoJoGAN은 GAN inversion을 통해 찾아낸 참조 스타일의 잠재 벡터와 임의의 노이즈의 가중합 통해 fine-tuning이 가능한 학습 과정을 소개했으며, 한 장의 참조 이미지만을 사용해 우수한 스타일 변환이 가능함을 보였다. 하지만 기존 가중합 기반 스타일 결합은 단순 선형 결합 형태로써 스타일 코드를 표현하는 매니폴드가 제한되는 문제점을 갖는다.
+          </p>
+          <p>
+            따라서 해당 잠재공간을 활용한 stylization 결과물은 미세한 표현을 효과적으로 반영하지 못함과 동시에 다양성에서 한계를 갖는다. 이러한 문제점을 해결하고자 본 논문에서는 두 가지 방법을 제안한다. 첫 번째로 다양성과 생성 품질을 높이기 위한 비선형적 스타일 결합으로써 스타일 잠재 공간을 폭 넓게 구성하는 방법이다. 이는 확장된 스타일 공간에서의 다양한 샘플링을 가능하게 함으로써 결과물의 품질 및 다양성을 향상시킨다. 두 번째로 스타일 결합에 있어서 공간적 장기 의존성을 파악해 의미 있는 스타일 특징의 조합을 만들어낼 수 있도록 계층별 Transformer 구조를 활용했다. 즉, coarse, middle, fine 계층에 대해 별도로 독립적인 신경망을 두어 스타일 코드를 인코딩한다. 제안하는 방법을 통해 전체적 외형은 원본의 외형을 따르도록 하고 미세영역에 대해 참조 스타일을 반영하도록 유도함으로써, 정량적/정성적/주관적 실험 결과를 통해 개선된 stylization 성능을 확인했다.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+
+
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+
+    <div class="columns is-centered">
+
+      <!-- Architecture. -->
+      <div class="column">
+        <div class="content">
+          <h2 class="title is-3">Architecture</h2>
+          <img src="images/architecture.png" />
+          <p>
+            잠재벡터의 계층(coarse, medium, fine)을 별도로 독립적인 신경망을 두어 스타일 벡터를 인코딩한다.
+          </p>
+          <ul>
+            <li>폭넓은 스타일 공간에서의 샘플링 방법을 통해 다양성을 증가 시켰다.</li>
+            <li>공간적 장기 의존성을 파악하는 Transformer 구조를 활용해 의미 있는 스타일 특징의 조합을 만들어냈다.</li>
+            <li>외형적인 부분은 사용자의 얼굴을, 미세한 부분은 캐릭터의 스타일을 따르도록 한다.</li>
+          </ul>
+        </div>
+      </div>
+      <!--/ Architecture. -->
+
+      <!-- Matting. -->
+      <div class="column">
+        <h2 class="title is-3">Matting</h2>
+        <div class="columns is-centered">
+          <div class="column content">
+            <p>
+              As a byproduct of our method, we can also solve the matting problem by ignoring
+              samples that fall outside of a bounding box during rendering.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <!--/ Matting. -->
+
+    <!-- Animation. -->
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Animation</h2>
+
+        <!-- Re-rendering. -->
+        <h3 class="title is-4">Re-rendering the input video</h3>
+        <div class="content has-text-justified">
+          <p>
+            Using <span class="dnerf">Nerfies</span>, you can re-render a video from a novel
+            viewpoint such as a stabilized camera by playing back the training deformations.
+          </p>
+        </div>
+        <div class="content has-text-centered">
+          <video id="replay-video"
+                 controls
+                 muted
+                 preload
+                 playsinline
+                 width="75%">
+            <source src="./static/videos/replay.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <!--/ Re-rendering. -->
+
+      </div>
+    </div>
+    <!--/ Animation. -->
+
+
+    <!-- Concurrent Work. -->
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Related Links</h2>
+
+        <div class="content has-text-justified">
+          <p>
+            There's a lot of excellent work that was introduced around the same time as ours.
+          </p>
+          <p>
+            <a href="https://arxiv.org/abs/2104.09125">Progressive Encoding for Neural Optimization</a> introduces an idea similar to our windowed position encoding for coarse-to-fine optimization.
+          </p>
+          <p>
+            <a href="https://www.albertpumarola.com/research/D-NeRF/index.html">D-NeRF</a> and <a href="https://gvv.mpi-inf.mpg.de/projects/nonrigid_nerf/">NR-NeRF</a>
+            both use deformation fields to model non-rigid scenes.
+          </p>
+          <p>
+            Some works model videos with a NeRF by directly modulating the density, such as <a href="https://video-nerf.github.io/">Video-NeRF</a>, <a href="https://www.cs.cornell.edu/~zl548/NSFF/">NSFF</a>, and <a href="https://neural-3d-video.github.io/">DyNeRF</a>
+          </p>
+          <p>
+            There are probably many more by the time you are reading this. Check out <a href="https://dellaert.github.io/NeRF/">Frank Dellart's survey on recent NeRF papers</a>, and <a href="https://github.com/yenchenlin/awesome-NeRF">Yen-Chen Lin's curated list of NeRF papers</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Concurrent Work. -->
+
+  </div>
+</section>
+
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@article{park2021nerfies,
+  author    = {Park, Keunhong and Sinha, Utkarsh and Barron, Jonathan T. and Bouaziz, Sofien and Goldman, Dan B and Seitz, Steven M. and Martin-Brualla, Ricardo},
+  title     = {Nerfies: Deformable Neural Radiance Fields},
+  journal   = {ICCV},
+  year      = {2021},
+}</code></pre>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <a class="icon-link"
+         href="./static/videos/nerfies_paper.pdf">
+        <i class="fas fa-file-pdf"></i>
+      </a>
+      <a class="icon-link" href="https://github.com/keunhong" class="external-link" disabled>
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+          <p>
+            This means you are free to borrow the <a
+              href="https://github.com/nerfies/nerfies.github.io">source code</a> of this website,
+            we just ask that you link back to this page in the footer.
+            Please remember to remove the analytics code included in the header of the website which
+            you do not want on your website.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
